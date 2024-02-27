@@ -22,7 +22,16 @@
               "src/favicon.ico",
               "src/assets"
             ],
+
+ 
             "styles": [
+              "src/template/assets/css/style.css",
+              "src/template/assets/vendor/bootstrap/css/bootstrap.min.css" ,
+              "src/template/assets/vendor/bootstrap-icons/bootstrap-icons.css" ,
+              "src/template/assets/vendor/boxicons/css/boxicons.min.css" ,
+              "src/template/assets/vendor/quill/quill.snow.css" ,
+              "src/template/assets/vendor/quill/quill.bubble.css" ,
+              "src/template/assets/vendor/remixicon/remixicon.css" ,
               "src/styles.css"
             ],
             "scripts": []
