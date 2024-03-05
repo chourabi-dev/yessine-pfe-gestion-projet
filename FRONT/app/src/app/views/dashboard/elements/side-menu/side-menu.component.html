@@ -1,0 +1,15 @@
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item" *ngFor="let m of menu">
+        <a class="nav-link collapsed" [routerLink]=" m.path ">
+          <i class=""   [ngClass]=" m.icon " ></i>
+          <span>{{ m.name }}</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+    </ul>
+
+  </aside>

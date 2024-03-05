@@ -15,8 +15,10 @@ export class AuthService {
   }
 
 
-  createAccount(){
-
+  createAccount(user:any){
+    return this.http.post(environment.API+'/auth/signup', user )
   }
+
+
 
 }
