@@ -7,6 +7,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavbarComponent } from './elements/navbar/navbar.component';
 import { SideMenuComponent } from './elements/side-menu/side-menu.component';
 import { CompaniesListComponent } from './pages/companies-list/companies-list.component';
+import { CreateCompanyComponent } from './pages/create-company/create-company.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CompanyInfoComponent } from './pages/company-info/company-info.component';
 
 
 @NgModule({
@@ -15,11 +18,15 @@ import { CompaniesListComponent } from './pages/companies-list/companies-list.co
     HomePageComponent,
     NavbarComponent,
     SideMenuComponent,
-    CompaniesListComponent
+    CompaniesListComponent,
+    CreateCompanyComponent,
+    CompanyInfoComponent
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }

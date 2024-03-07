@@ -8,6 +8,9 @@ import { ApiService } from 'src/app/api.service';
 })
 export class CompaniesListComponent implements OnInit {
 
+  companies:any[] = [];
+
+
   constructor(private api:ApiService) { }
 
   ngOnInit(): void {
@@ -17,8 +20,16 @@ export class CompaniesListComponent implements OnInit {
   getData(){
     this.api.getCompaniesList().toPromise().then((comapnies:any)=>{
       console.log(comapnies);
+
+      this.companies = comapnies;
       
     })
+  }
+
+
+  deleteCompany(id:number){
+    console.log(id);
+    
   }
 
 }
