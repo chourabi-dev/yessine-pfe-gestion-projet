@@ -10,6 +10,8 @@ import { CompaniesListComponent } from './pages/companies-list/companies-list.co
 import { CreateCompanyComponent } from './pages/create-company/create-company.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompanyInfoComponent } from './pages/company-info/company-info.component';
+import { EmployeesListComponent } from './pages/employees-list/employees-list.component';
+import { EmployeesAddComponent } from './pages/employees-add/employees-add.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { CompanyInfoComponent } from './pages/company-info/company-info.componen
     SideMenuComponent,
     CompaniesListComponent,
     CreateCompanyComponent,
-    CompanyInfoComponent
+    CompanyInfoComponent,
+    EmployeesListComponent,
+    EmployeesAddComponent
   ],
   imports: [
     CommonModule,

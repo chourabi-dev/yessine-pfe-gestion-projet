@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
@@ -35,6 +36,8 @@ export class CreateCompanyComponent implements OnInit {
 
 
   save(){
+    this.error='';
+    
     const company = this.form.value;
 
     this.api.createCompany(company).toPromise().then((res:any)=>{
@@ -45,6 +48,10 @@ export class CreateCompanyComponent implements OnInit {
         this.error = res.message;
       }
       
+    }).catch((err:HttpErrorResponse)=>{
+      if (err.status == 500) { // ERROR SQL
+        this.error="Company name already in use";
+      }
     })
 
   }

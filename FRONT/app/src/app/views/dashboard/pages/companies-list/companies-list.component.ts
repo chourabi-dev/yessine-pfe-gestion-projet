@@ -29,6 +29,14 @@ export class CompaniesListComponent implements OnInit {
 
   deleteCompany(id:number){
     console.log(id);
+
+    this.api.deleteCompany(id).toPromise().then((res:any)=>{
+      if (res.success == true) {
+        this.getData();
+      }
+    })
+
+
     
   }
 

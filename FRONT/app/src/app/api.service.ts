@@ -21,13 +21,7 @@ export class ApiService {
       
     const headers= new HttpHeaders({
       'Authorization':'Bearer '+token
-    });
-    
-    /*
-    .set('Content-Type','application/json')
-    .set('Authorization',  'Bearer '+token );*/
-
-
+    }); 
     return this.http.get(environment.API+'/api/v1/companies/list',{
       headers: headers
     });
@@ -52,6 +46,59 @@ export class ApiService {
     });
   }
 
+
+
+
+
+  deleteCompany(id:number){
+    const token = localStorage.getItem('token');
+     
+      
+    const headers= new HttpHeaders({
+      'Authorization':'Bearer '+token
+    });
+     
+
+    return this.http.delete(environment.API+'/api/v1/companies/delete/'+id,{
+      headers: headers
+    });
+
+  }
+
+
+  getCompanyByID(id:number){ 
+    const token = localStorage.getItem('token');
+     
+      
+    const headers= new HttpHeaders({
+      'Authorization':'Bearer '+token
+    }); 
+    return this.http.get(environment.API+'/api/v1/companies/details/'+id,{
+      headers: headers
+    });
+  }
+
+
+
+
+  getEmployeesList(){
+   
+    const token = localStorage.getItem('token');
+     
+      
+    const headers= new HttpHeaders({
+      'Authorization':'Bearer '+token
+    }); 
+    return this.http.get(environment.API+'/api/v1/employees/list',{
+      headers: headers
+    });
+  }
+
+
+
+  createEmployeeAccount(employee:any){
+
+  }
   
 
 
