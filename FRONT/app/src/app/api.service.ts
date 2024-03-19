@@ -6,42 +6,23 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
-  
-  
-
-
-  constructor(private http:HttpClient) { }
 
 
 
-  getCompaniesList(){
 
-    const token = localStorage.getItem('token');
-     
-      
-    const headers= new HttpHeaders({
-      'Authorization':'Bearer '+token
-    }); 
-    return this.http.get(environment.API+'/api/v1/companies/list',{
-      headers: headers
-    });
-  }
+  constructor(private http: HttpClient) { }
 
 
 
-  
-
-  createCompany(body:any){
+  getCompaniesList() {
 
     const token = localStorage.getItem('token');
-     
-      
-    const headers= new HttpHeaders({
-      'Authorization':'Bearer '+token
-    });
-     
 
-    return this.http.post(environment.API+'/api/v1/companies/add',body,{
+
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.get(environment.API + '/api/v1/companies/list', {
       headers: headers
     });
   }
@@ -50,30 +31,17 @@ export class ApiService {
 
 
 
-  deleteCompany(id:number){
-    const token = localStorage.getItem('token');
-     
-      
-    const headers= new HttpHeaders({
-      'Authorization':'Bearer '+token
-    });
-     
+  createCompany(body: any) {
 
-    return this.http.delete(environment.API+'/api/v1/companies/delete/'+id,{
-      headers: headers
+    const token = localStorage.getItem('token');
+
+
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
     });
 
-  }
 
-
-  getCompanyByID(id:number){ 
-    const token = localStorage.getItem('token');
-     
-      
-    const headers= new HttpHeaders({
-      'Authorization':'Bearer '+token
-    }); 
-    return this.http.get(environment.API+'/api/v1/companies/details/'+id,{
+    return this.http.post(environment.API + '/api/v1/companies/add', body, {
       headers: headers
     });
   }
@@ -81,25 +49,108 @@ export class ApiService {
 
 
 
-  getEmployeesList(){
-   
+
+  deleteCompany(id: number) {
     const token = localStorage.getItem('token');
-     
-      
-    const headers= new HttpHeaders({
-      'Authorization':'Bearer '+token
-    }); 
-    return this.http.get(environment.API+'/api/v1/employees/list',{
+
+
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+
+
+    return this.http.delete(environment.API + '/api/v1/companies/delete/' + id, {
+      headers: headers
+    });
+
+  }
+
+
+  getCompanyByID(id: number) {
+    const token = localStorage.getItem('token');
+
+
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.get(environment.API + '/api/v1/companies/details/' + id, {
       headers: headers
     });
   }
 
 
 
-  createEmployeeAccount(employee:any){
+
+  getEmployeesList() {
+
+    const token = localStorage.getItem('token');
+
+
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.get(environment.API + '/api/v1/employees/list', {
+      headers: headers
+    });
+  }
+
+
+
+  createEmployeeAccount(body: any) {
+
+    const   token  =  localStorage.getItem('token');
+
+  const
+      headers =
+        new
+          HttpHeaders({
+
+            'Authorization': 'Bearer ' + token
+
+          });
+
+ 
+
+    return  this.http.post(environment.API + '/api/v1/employees/add', body, {
+
+      headers:
+        headers
+
+    });
+
+
+
 
   }
-  
+
+
+
+  deleteEmployee(id: any) {
+
+    const token  =  localStorage.getItem('token'); 
+    const headers =  new
+          HttpHeaders({
+
+            'Authorization': 'Bearer ' + token
+
+          }); 
+
+    return this.http.delete(environment.API + '/api/v1/employees/delete/' + id, {
+
+      headers:  headers
+
+    });
+
+
+
+
+
+
+
+
+
+  }
+
 
 
 }

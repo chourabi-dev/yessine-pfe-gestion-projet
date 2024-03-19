@@ -1,1 +1,36 @@
-<p>employees-add works!</p>
+<div class="card">
+    <div class="card-body">
+        <h3>Create Employee</h3>
+        <form [formGroup]="form" (ngSubmit)="SaveEmployee()">
+            <div class="mb-3">
+                <label for="">Name</label>
+                <input type="text" class="form-control" formControlName="fullName">
+            </div>
+            <div class="mb-3">
+                <label for="">Email</label>
+                <input type="text" class="form-control" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label for="">Password</label>
+                <input type="text" class="form-control" formControlName="password">
+            </div>
+            <div class="mb-3">
+                <label for="">Address</label>
+                <input type="text" class="form-control" formControlName="address">
+            </div>
+            <div class="mb-3">
+                <label for="">Phone</label>
+                <input type="text" class="form-control" formControlName="phone">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success" [disabled]=" ! form.valid " >Add Employee</button>
+            </div>
+            <div class="alert alert-success" *ngIf=" success != '' ">
+                {{ success }}
+            </div>
+            <div class="alert alert-danger" *ngIf=" error != ''  ">
+                {{ error }}
+            </div>
+        </form>
+    </div>
+</div>

@@ -14,12 +14,10 @@ const routes: Routes = [
     {path:'companies', component:CompaniesListComponent },
     {path:'companies/add', component:CreateCompanyComponent },
     {path:'companies/details/:id', component:CompanyInfoComponent }, 
-    
+
     { path:'employees', component:EmployeesListComponent }, 
     { path:'employees/add', component:EmployeesAddComponent }
     
-    
-
   ]},
   
 ];
